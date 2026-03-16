@@ -8,6 +8,8 @@
 
 <title>Arun Kumar | Portfolio</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
 *{
@@ -33,7 +35,7 @@ color:white;
 .container{
 max-width:1400px;
 margin:auto;
-padding:60px;
+padding:40px 20px;
 }
 
 header{
@@ -42,7 +44,8 @@ margin-bottom:60px;
 }
 
 header img{
-width:180px;
+width:170px;
+max-width:40%;
 border-radius:50%;
 border:3px solid #38bdf8;
 box-shadow:0 0 25px #38bdf8;
@@ -144,11 +147,12 @@ border:1px solid #38bdf8;
 display:flex;
 flex-wrap:wrap;
 gap:20px;
+justify-content:center;
 margin-top:20px;
 }
 
 .contact-icons a{
-padding:12px 22px;
+padding:14px 24px;
 background:#020617;
 border-radius:10px;
 border:1px solid #38bdf8;
@@ -156,6 +160,9 @@ text-decoration:none;
 color:white;
 font-weight:bold;
 transition:0.3s;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .contact-icons a:hover{
@@ -167,6 +174,29 @@ footer{
 text-align:center;
 margin-top:80px;
 color:#64748b;
+}
+
+/* Mobile responsive */
+
+@media (max-width:768px){
+
+h1{
+font-size:32px;
+}
+
+.container{
+padding:20px;
+}
+
+.projects{
+grid-template-columns:1fr;
+}
+
+.contact-icons{
+flex-direction:column;
+align-items:center;
+}
+
 }
 
 </style>
@@ -194,8 +224,8 @@ color:#64748b;
 <h2>About Me</h2>
 
 <p>
-Motivated Electronics and Communication Engineering student passionate about
-Embedded Systems, Artificial Intelligence and IoT technologies.
+Electronics and Communication Engineering student passionate about Embedded Systems,
+Artificial Intelligence, and IoT technologies.
 </p>
 
 </div>
@@ -206,11 +236,9 @@ Embedded Systems, Artificial Intelligence and IoT technologies.
 
 <ul>
 
-<li>B.Tech ECE – Siddhartha Institute of Technology and Science (2022-2026) | CGPA: 8.12</li>
-
-<li>Intermediate – Sri Chaitanya Junior College | CGPA: 8.83</li>
-
-<li>SSC – ST Peters High School | CGPA: 9.80</li>
+<li>B.Tech ECE – Siddhartha Institute of Technology and Science (2022-2026)</li>
+<li>Intermediate – Sri Chaitanya Junior College</li>
+<li>SSC – ST Peters High School</li>
 
 </ul>
 
@@ -224,7 +252,7 @@ Embedded Systems, Artificial Intelligence and IoT technologies.
 
 <div class="card">
 <h3>Wireless Surveillance Robot</h3>
-<p>Robot with motion detection and real-time video streaming.</p>
+<p>Robot with motion detection and live video streaming.</p>
 </div>
 
 <div class="card">
@@ -234,7 +262,7 @@ Embedded Systems, Artificial Intelligence and IoT technologies.
 
 <div class="card">
 <h3>AI Tools Web App</h3>
-<p>Interactive AI tools platform built during hackathon.</p>
+<p>Interactive AI tools web application.</p>
 </div>
 
 </div>
@@ -289,13 +317,21 @@ IoT
 
 <div class="contact-icons">
 
-<a href="mailto:kondaarunkumar750@gmail.com">📧 Gmail</a>
+<a href="mailto:kondaarunkumar7950@gmail.com">
+<i class="fa-solid fa-envelope"></i> Gmail
+</a>
 
-<a href="https://wa.me/917287902264">💬 WhatsApp</a>
+<a href="https://wa.me/917287902264">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
+</a>
 
-<a href="https://instagram.com/arun_kumar_7950">📸 Instagram</a>
+<a href="https://instagram.com/arun_kumar_7950">
+<i class="fa-brands fa-instagram"></i> Instagram
+</a>
 
-<a href="https://github.com/arunkumar7950">💻 GitHub</a>
+<a href="https://github.com/arunkumar7950">
+<i class="fa-brands fa-github"></i> GitHub
+</a>
 
 </div>
 
@@ -311,13 +347,13 @@ IoT
 
 <script>
 
-const text = "Embedded Systems • AI • IoT Developer";
+const text="Embedded Systems • AI • IoT Developer";
 
-let i = 0;
+let i=0;
 
 function typing(){
-if(i < text.length){
-document.getElementById("typing").innerHTML += text.charAt(i);
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
 i++;
 setTimeout(typing,70);
 }
