@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Konda Arun Kumar | ECE Developer</title>
+<title>Konda Arun Kumar | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -100,11 +100,10 @@ section{padding:100px 0;}
 .p-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.06),rgba(124,58,237,0.06));opacity:0;transition:opacity .4s;}
 .p-card:hover{transform:translateY(-8px);border-color:rgba(0,212,255,.45);box-shadow:0 24px 60px rgba(0,212,255,.13);}
 .p-card:hover::after{opacity:1;}
-.p-img-wrap{position:relative;height:190px;overflow:hidden;}
-.p-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
-.p-card:hover .p-img-wrap img{transform:scale(1.05);}
+.p-img-wrap{position:relative;height:210px;overflow:hidden;background:#060e1e;display:flex;align-items:center;justify-content:center;}
+.p-img-wrap img{width:100%;height:100%;object-fit:contain;display:block;padding:8px;}
 .p-img-fb{width:100%;height:100%;background:linear-gradient(135deg,var(--bg3),var(--bg2));display:flex;align-items:center;justify-content:center;font-size:52px;}
-.p-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,9,23,.85),transparent);display:flex;align-items:flex-end;padding:14px;}
+.p-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(2,9,23,.9),transparent);display:flex;align-items:flex-end;padding:14px;}
 .p-open-hint{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.3);border-radius:5px;padding:5px 10px;backdrop-filter:blur(6px);}
 .p-body{padding:22px;}
 .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:11px;}
@@ -120,7 +119,7 @@ section{padding:100px 0;}
 .modal-bg.open{opacity:1;pointer-events:all;}
 .modal{background:#070f20;border:1px solid rgba(0,212,255,.25);border-radius:20px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;transform:translateY(30px) scale(.97);transition:transform .35s cubic-bezier(.25,.8,.25,1);scrollbar-width:thin;scrollbar-color:var(--accent2) transparent;}
 .modal-bg.open .modal{transform:translateY(0) scale(1);}
-.modal-img{width:100%;height:260px;object-fit:cover;border-radius:18px 18px 0 0;display:block;background:var(--bg3);}
+.modal-img{width:100%;max-height:280px;object-fit:contain;border-radius:18px 18px 0 0;display:block;background:#060e1e;padding:12px;}
 .modal-img-fb{width:100%;height:200px;border-radius:18px 18px 0 0;background:linear-gradient(135deg,var(--bg3),var(--bg2));display:flex;align-items:center;justify-content:center;font-size:72px;}
 .modal-body{padding:32px;}
 .modal-close{position:sticky;top:0;z-index:10;display:flex;justify-content:flex-end;padding:14px 14px 0;margin:-32px -32px 0;background:linear-gradient(to bottom,#070f20 70%,transparent);}
@@ -284,13 +283,13 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
           <a href="#contact" class="btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects</span></div>
+          <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
           <div class="stat"><span class="stat-num">8.83</span><span class="stat-label">CGPA</span></div>
           <div class="stat"><span class="stat-num">5</span><span class="stat-label">Certs</span></div>
         </div>
       </div>
       <div class="hero-img-wrap">
-        <img src="profile.jpg" alt="Konda Arun Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="profile.jpg" alt="Konda Arun Kumar" style="object-fit:contain;background:#060e1e;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="img-fb" style="display:none">👨‍💻</div>
       </div>
     </div>
@@ -362,25 +361,7 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
     </div>
     <div class="projects-grid">
 
-      <!-- PROJECT 1 -->
-      <div class="p-card rev" onclick="openModal('robot')">
-        <div class="p-img-wrap">
-          <img src="robot.jpg" alt="Surveillance Robot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="p-img-fb" style="display:none">🤖</div>
-          <div class="p-overlay"><span class="p-open-hint">Click for details →</span></div>
-        </div>
-        <div class="p-body">
-          <div class="tags"><span class="tag">C/C++</span><span class="tag">Raspberry Pi</span><span class="tag">Camera</span><span class="tag">IoT</span></div>
-          <h3>Wireless Surveillance Robot</h3>
-          <p>A robot with motion detection &amp; live video streaming for real-time remote monitoring.</p>
-          <div class="p-links">
-            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Details</span>
-            <a href="https://github.com/arunkumar7950" class="p-link" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i>GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 2 -->
+      <!-- PROJECT 1: ACCIDENT DETECTION — full mini project report -->
       <div class="p-card rev" onclick="openModal('accident')">
         <div class="p-img-wrap">
           <img src="accident.jpg" alt="Accident Detection" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -388,17 +369,52 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
           <div class="p-overlay"><span class="p-open-hint">Click for details →</span></div>
         </div>
         <div class="p-body">
-          <div class="tags"><span class="tag">GPS</span><span class="tag">GSM</span><span class="tag">Embedded C</span></div>
+          <div class="tags"><span class="tag">NodeMCU</span><span class="tag">MPU6050</span><span class="tag">IoT</span><span class="tag">Telegram</span></div>
           <h3>Accident Detection &amp; Alert System</h3>
-          <p>Detects vehicle collisions and sends real-time GPS location alerts via GSM.</p>
+          <p>IoT-based system using MPU6050, alcohol &amp; temperature sensors to detect accidents and send instant Telegram alerts.</p>
           <div class="p-links">
-            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Details</span>
+            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Full Details</span>
             <a href="https://github.com/arunkumar7950" class="p-link" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i>GitHub</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 3 -->
+      <!-- PROJECT 2: SURVEILLANCE ROBOT -->
+      <div class="p-card rev" onclick="openModal('robot')">
+        <div class="p-img-wrap">
+          <img src="robot.jpg" alt="Surveillance Robot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="p-img-fb" style="display:none">🤖</div>
+          <div class="p-overlay"><span class="p-open-hint">Click for details →</span></div>
+        </div>
+        <div class="p-body">
+          <div class="tags"><span class="tag">Arduino</span><span class="tag">Raspberry Pi</span><span class="tag">ESP8266</span><span class="tag">IoT</span></div>
+          <h3>Wireless Surveillance Robot</h3>
+          <p>IoT-powered robot with live video streaming &amp; motion detection for real-time remote security monitoring via Wi-Fi.</p>
+          <div class="p-links">
+            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Full Details</span>
+            <a href="https://github.com/arunkumar7950" class="p-link" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: RISC-V VLSI -->
+      <div class="p-card rev" onclick="openModal('riscv')">
+        <div class="p-img-wrap">
+          <div class="p-img-fb">⚙️</div>
+          <div class="p-overlay"><span class="p-open-hint">Click for details →</span></div>
+        </div>
+        <div class="p-body">
+          <div class="tags"><span class="tag">VLSI</span><span class="tag">RISC-V</span><span class="tag">ISA</span><span class="tag">Edge IoT</span></div>
+          <h3>RISC-V ISA for Edge IoT Platform</h3>
+          <p>Designed a custom RISC-V Instruction Set Architecture optimised for low-power edge IoT applications as a VLSI project.</p>
+          <div class="p-links">
+            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Full Details</span>
+            <a href="https://github.com/arunkumar7950" class="p-link" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: AI TOOLS WEB APP -->
       <div class="p-card rev" onclick="openModal('ai')">
         <div class="p-img-wrap">
           <img src="ai.jpg" alt="AI Tools Web App" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -406,11 +422,11 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
           <div class="p-overlay"><span class="p-open-hint">Click for details →</span></div>
         </div>
         <div class="p-body">
-          <div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Web</span><span class="tag">Hackathon</span></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">AI/ML</span><span class="tag">Web</span><span class="tag">Hackathon</span></div>
           <h3>AI Tools Web Application</h3>
-          <p>Responsive real-time web app with interactive AI tools, built during a hackathon.</p>
+          <p>Responsive real-time web app with interactive AI tools, built under hackathon conditions for quick AI-powered unification.</p>
           <div class="p-links">
-            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Details</span>
+            <span class="p-link"><i class="fa-solid fa-circle-info"></i>Full Details</span>
             <a href="https://github.com/arunkumar7950" class="p-link" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i>GitHub</a>
           </div>
         </div>
@@ -529,9 +545,9 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
         <h3>Let's connect 🚀</h3>
         <p>Open to opportunities, collaborations, or a chat about tech, embedded systems or AI. Reach out through any platform below!</p>
         <div class="c-links">
-          <a href="mailto:kondaarunkumar7950@gmail.com" class="c-link">
+          <a href="/cdn-cgi/l/email-protection#701b1f1e14111102051e1b051d11024749454030171d11191c5e131f1d" class="c-link">
             <div class="c-icon ci-gmail"><i class="fa-solid fa-envelope"></i></div>
-            <div class="c-meta"><small>Email</small>kondaarunkumar7950@gmail.com</div>
+            <div class="c-meta"><small>Email</small><span class="__cf_email__" data-cfemail="5b3034353f3a3a292e35302e363a296c626e6b1b3c363a323775383436">[email&#160;protected]</span></div>
           </a>
           <a href="https://wa.me/917287902264" class="c-link" target="_blank">
             <div class="c-icon ci-wa"><i class="fa-brands fa-whatsapp"></i></div>
@@ -586,57 +602,89 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ══ MODAL DATA ══
 const projects = {
-  robot: {
-    img: 'robot.jpg',
-    fb: '🤖',
-    tags: ['C/C++','Raspberry Pi','Camera Module','IoT','Wi-Fi','Motion Detection'],
-    title: 'Wireless Surveillance',
-    titleGrad: 'Robot',
-    subtitle: 'A remotely controlled robot capable of detecting motion and transmitting live video in real-time — built for security monitoring applications.',
-    overview: `This project involved designing and building a wireless surveillance robot that navigates spaces while detecting motion and streaming live video to the operator in real-time.
-The robot uses camera modules to capture real-time footage and wireless protocols to transmit the feed. Motion detection algorithms trigger alerts when movement is detected, ideal for security applications.`,
+  accident: {
+    img: 'accident.jpg',
+    fb: '🚨',
+    tags: ['NodeMCU (ESP8266)','MPU6050','Alcohol Sensor','Temperature Sensor','Telegram Bot','LCD Display','Buzzer','IoT','Arduino IDE'],
+    title: 'Accident Detection &',
+    titleGrad: 'Alert System',
+    subtitle: 'An IoT-based safety system that automatically detects vehicle accidents, drunk driving, and engine overheating — then sends instant Telegram alerts with sensor data. Mini project submitted to JNTUH.',
+    overview: `Road accidents often go unreported for long periods due to delayed emergency responses, especially in remote areas. This IoT-based system solves that by automating detection and alerting without any manual action from the victim.
+The system uses an MPU6050 (3-axis accelerometer + gyroscope) to detect sudden impacts, falls, or abnormal vehicle tilting. An alcohol sensor (MQ series) monitors driver intoxication, and a temperature sensor tracks engine heat in real time. All readings are displayed on a 16×2 LCD.
+When an accident, alcohol presence (≥30%), or overheating (≥40°C) is detected, a buzzer sounds immediately and the NodeMCU sends a detailed Telegram message to the emergency contact — including alcohol level, seat belt status, engine temperature, and accident status — over Wi-Fi within seconds.`,
     features: [
-      {i:'📡',t:'Live Video Streaming',d:'Real-time video transmission via wireless modules to a remote operator.'},
-      {i:'🔍',t:'Motion Detection',d:'Automated detection with alert functionality using camera sensors.'},
-      {i:'🕹️',t:'Remote Control',d:'Wireless navigation allowing control from a safe distance.'},
-      {i:'⚡',t:'Low Latency',d:'Fast communication for immediate response to operator commands.'},
+      {i:'💥', t:'Impact Detection', d:'MPU6050 detects sudden acceleration ≥8G on any axis, triggering the accident alert instantly.'},
+      {i:'🍺', t:'Drunk Driving Detection', d:'MQ alcohol sensor continuously monitors driver state and alerts if alcohol level ≥30%.'},
+      {i:'🌡️', t:'Engine Temperature Monitor', d:'Real-time thermal monitoring warns if engine temperature exceeds safe thresholds.'},
+      {i:'📱', t:'Telegram Bot Alerts', d:'NodeMCU sends formatted alerts via Telegram Bot API over Wi-Fi with all sensor readings in seconds.'},
     ],
-    tech: ['C Programming','C++','Raspberry Pi','Camera Module','Wi-Fi Module','Python','GPIO Control','Motor Driver'],
+    tech: ['NodeMCU ESP8266','MPU6050 (Accel + Gyro)','MQ Alcohol Sensor','LM35 Temperature Sensor','LCD 16×2 (I2C)','Buzzer','Arduino IDE','C++','Telegram Bot API','Wi-Fi','L298N Motor Driver'],
     learn: [
-      'Hands-on Raspberry Pi GPIO programming and hardware interfacing',
-      'Real-time video streaming using wireless protocols',
-      'Integration of motors, camera, and wireless modules',
-      'Motion detection algorithms and image processing basics',
-      'Power management for mobile embedded systems',
+      'MPU6050 I2C interfacing and threshold-based impact detection in embedded C++',
+      'Telegram Bot API integration using UniversalTelegramBot library on ESP8266',
+      'Multi-sensor fusion — combining motion, alcohol and thermal data on one MCU',
+      'NodeMCU Wi-Fi connectivity and real-time cloud alert transmission',
+      'Writing safety-critical firmware with continuous loop monitoring',
+      'Collaborating in a 5-member team under JNTUH academic project guidelines',
     ],
     github: 'https://github.com/arunkumar7950',
     demo: null,
   },
-  accident: {
-    img: 'accident.jpg',
-    fb: '🚨',
-    tags: ['GPS','GSM','Embedded C','Accelerometer','UART','AT Commands'],
-    title: 'Accident Detection &',
-    titleGrad: 'Alert System',
-    subtitle: 'An automated system that detects vehicle collisions using sensors and instantly sends GPS-based emergency alerts via GSM to saved contacts.',
-    overview: `This mini project addresses a critical real-world problem — road accidents often result in delayed emergency responses. This system automates detection and alerting without any manual action.
-It uses accelerometer and impact sensors to detect collisions, then retrieves GPS location and sends SMS with coordinates to emergency contacts via the GSM module.`,
+  robot: {
+    img: 'robot.jpg',
+    fb: '🤖',
+    tags: ['Arduino','Raspberry Pi','ESP8266','ESP32','STM32','ARM Cortex','Wi-Fi','Live Streaming','Motion Detection','IoT'],
+    title: 'Wireless Surveillance',
+    titleGrad: 'Robot',
+    subtitle: 'An IoT-powered wireless robot combining live video streaming and motion detection for real-time remote security monitoring — solving the limitations of traditional static surveillance systems.',
+    overview: `Traditional surveillance systems lack mobility and cannot respond to dynamic threats in real time. This project solves that with an IoT-powered wireless robot that moves, sees, and detects motion autonomously.
+Built using Arduino and Raspberry Pi as the core controllers, with ESP8266 for Wi-Fi connectivity, the robot streams live video to a remote interface while simultaneously running motion detection algorithms on the camera feed.
+The operator can monitor the video stream from any device on the same network and control the robot remotely. When motion is detected, the system triggers an alert and can respond autonomously — dramatically improving security coverage and automation over fixed cameras.`,
     features: [
-      {i:'📍',t:'Real-time GPS',d:'Precise location data sent instantly on accident detection.'},
-      {i:'📱',t:'Instant SMS Alert',d:'Automatic SMS notifications via GSM to emergency contacts.'},
-      {i:'⚡',t:'Auto Detection',d:'No manual intervention — system reacts in milliseconds.'},
-      {i:'🔋',t:'Low Power',d:'Embedded system optimized for continuous vehicle operation.'},
+      {i:'📡', t:'Live Video Streaming', d:'Real-time video feed transmitted over Wi-Fi using ESP8266/ESP32 to any connected device.'},
+      {i:'🔍', t:'Motion Detection', d:'Automated detection using camera modules and sensor fusion — triggers alerts on movement.'},
+      {i:'🕹️', t:'Remote Control', d:'Full wireless control of robot movement from any device over Wi-Fi network.'},
+      {i:'⚡', t:'Real-time Response', d:'Low-latency communication between controller and robot for immediate navigation response.'},
     ],
-    tech: ['Embedded C','GPS Module (NEO-6M)','GSM Module (SIM800L)','Accelerometer','Arduino','AT Commands','UART Communication'],
+    tech: ['Arduino','Raspberry Pi','ESP8266','ESP32','STM32','ARM Cortex','Camera Module','Wi-Fi','C/C++','Python','GPIO Control','L298N Motor Driver','PIR Sensor'],
     learn: [
-      'GPS module interfacing and NMEA data parsing for location',
-      'GSM AT command programming for SMS transmission',
-      'UART serial communication between embedded modules',
-      'Real-world embedded system debugging',
-      'Building safety-critical reliable systems',
+      'Raspberry Pi and Arduino GPIO programming and hardware integration',
+      'Real-time video streaming over Wi-Fi using ESP8266/ESP32',
+      'Motion detection algorithms using camera modules and PIR sensors',
+      'Multi-controller architecture combining Arduino and Raspberry Pi',
+      'Remote control system design and low-latency wireless communication',
+      'Power management and embedded system design for mobile autonomous robots',
+    ],
+    github: 'https://github.com/arunkumar7950',
+    demo: null,
+  },
+  riscv: {
+    img: '',
+    fb: '⚙️',
+    tags: ['VLSI','RISC-V','ISA Design','Edge IoT','Low Power','Hardware Architecture','Verilog/VHDL'],
+    title: 'RISC-V ISA for',
+    titleGrad: 'Edge IoT Platform',
+    subtitle: 'A VLSI project focused on developing a custom RISC-V Instruction Set Architecture specifically optimised for low-power edge IoT devices — balancing performance, power efficiency, and hardware simplicity.',
+    overview: `Edge IoT devices face a fundamental challenge: they need to be powerful enough to process sensor data locally, yet efficient enough to run on minimal power for long periods. Standard processor architectures are over-engineered for these constraints.
+This VLSI project addresses that gap by designing a custom RISC-V Instruction Set Architecture tailored for edge IoT applications. RISC-V's open and modular nature makes it ideal — the base ISA can be extended with custom instructions specific to IoT sensor processing.
+The project involved defining the instruction set, designing the processor pipeline, and optimising for minimal gate count and power consumption — critical metrics for battery-powered edge devices. This work sits at the intersection of computer architecture, digital design, and IoT systems engineering.`,
+    features: [
+      {i:'🔧', t:'Custom ISA Design', d:'RISC-V base ISA extended with domain-specific instructions for IoT sensor data processing.'},
+      {i:'⚡', t:'Low Power Optimisation', d:'Architecture decisions focused on minimising switching activity and gate count for battery operation.'},
+      {i:'🏗️', t:'Processor Pipeline', d:'Designed instruction fetch, decode, execute pipeline stages optimised for edge workloads.'},
+      {i:'📡', t:'Edge IoT Focus', d:'Tailored for real-time sensor processing at the edge without cloud dependency.'},
+    ],
+    tech: ['RISC-V ISA','VLSI Design','Verilog / VHDL','Digital Logic Design','Processor Architecture','Low Power Design','FPGA Simulation','EDA Tools','Computer Architecture'],
+    learn: [
+      'RISC-V ISA specification and custom instruction extension design',
+      'VLSI digital design methodology — from RTL to gate-level',
+      'Low-power design techniques in hardware architecture',
+      'Processor pipeline design: fetch, decode, execute stages',
+      'Hardware description using Verilog/VHDL and simulation with EDA tools',
+      'Balancing performance, power, and area (PPA) trade-offs in chip design',
     ],
     github: 'https://github.com/arunkumar7950',
     demo: null,
@@ -644,25 +692,26 @@ It uses accelerometer and impact sensors to detect collisions, then retrieves GP
   ai: {
     img: 'ai.jpg',
     fb: '🧠',
-    tags: ['Python','HTML/CSS/JS','AI/ML','REST APIs','Flask','Responsive Design'],
+    tags: ['Python','HTML/CSS/JS','AI/ML','REST APIs','Flask','Responsive Design','Hackathon'],
     title: 'AI Tools',
     titleGrad: 'Web Application',
-    subtitle: 'A responsive real-time web application with interactive AI tools and an optimized user interface — built during a hackathon to unify AI capabilities in one platform.',
-    overview: `This web application makes AI tools accessible through a clean interface. The platform consolidates multiple AI capabilities into a single responsive web app.
-Built with a focus on real-time processing and low-latency responses, designed to handle user input efficiently and deliver AI results quickly — critical in a hackathon setting.`,
+    subtitle: 'A responsive real-time web application consolidating multiple interactive AI tools into one optimised interface — developed under hackathon conditions for speed, usability, and real-time performance.',
+    overview: `Accessing AI tools typically requires navigating multiple platforms and APIs, each with different interfaces. This project unifies them into one clean, responsive web application built for speed.
+Developed during a hackathon, the application was engineered under time pressure with a focus on real-time processing and low-latency responses. The backend is powered by Python (Flask/FastAPI) integrating various AI/ML libraries, while the frontend delivers a smooth, mobile-friendly experience.
+The hackathon context demanded rapid prototyping skills — designing the architecture, writing the backend, building the UI, and deploying — all within a tight deadline. The result is a production-ready web app that makes AI capabilities accessible to non-technical users through a polished interface.`,
     features: [
-      {i:'🤖',t:'Interactive AI Tools',d:'Multiple AI-powered features from a single intuitive interface.'},
-      {i:'⚡',t:'Real-time Processing',d:'Quick response times with optimized backend processing.'},
-      {i:'📱',t:'Fully Responsive',d:'Works seamlessly on desktop, tablet, and mobile.'},
-      {i:'🎨',t:'Optimized UI/UX',d:'Clean, modern design for ease of use and accessibility.'},
+      {i:'🤖', t:'Multiple AI Tools', d:'Several AI-powered features unified in a single interface — no switching between platforms.'},
+      {i:'⚡', t:'Real-time Processing', d:'Optimised backend with low-latency AI inference for immediate user responses.'},
+      {i:'📱', t:'Fully Responsive', d:'Works seamlessly across desktop, tablet, and mobile — built mobile-first.'},
+      {i:'🎨', t:'Optimised UI/UX', d:'Clean modern interface designed for accessibility and ease of use for non-technical users.'},
     ],
-    tech: ['Python','HTML / CSS / JS','AI/ML Libraries','REST APIs','Flask','Responsive Design','Real-time Processing'],
+    tech: ['Python','Flask / FastAPI','HTML5 / CSS3 / JavaScript','AI/ML Libraries','REST APIs','Responsive Design','Real-time Processing','Git'],
     learn: [
-      'Building full-stack web applications with Python backends',
-      'Integrating AI/ML models into web interfaces',
-      'Rapid prototyping under hackathon time constraints',
+      'Building full-stack web applications with Python backends and REST APIs',
+      'Integrating multiple AI/ML models into a unified web interface',
+      'Rapid prototyping and deployment under hackathon time pressure',
       'UI/UX design principles for AI-powered applications',
-      'API design and real-time data handling',
+      'Performance optimisation for real-time AI inference in web apps',
     ],
     github: 'https://github.com/arunkumar7950',
     demo: '#',
@@ -792,7 +841,7 @@ async function submitForm(e) {
 
 // ══ TYPING ══
 (function(){
-  const phrases=['Embedded Systems Developer','IoT Engineer','MATLAB Programmer','AI Enthusiast','ECE Student'];
+  const phrases=['Embedded Systems Developer','IoT Engineer','VLSI Designer','RISC-V Architect','AI Enthusiast','ECE Student'];
   let pi=0,ci=0,del=false;
   const el=document.getElementById('typeTxt');
   function type(){
@@ -830,14 +879,4 @@ const secs=document.querySelectorAll('section[id]');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY+90;
   secs.forEach(s=>{
-    if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight){
-      document.querySelectorAll('.nav-links a').forEach(a=>{
-        a.classList.remove('active');
-        if(a.getAttribute('href')==='#'+s.id)a.classList.add('active');
-      });
-    }
-  });
-},{passive:true});
-</script>
-</body>
-</html>
+    if(y>=s.offsetTop&&y<s.offs
