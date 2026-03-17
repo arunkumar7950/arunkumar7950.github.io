@@ -545,9 +545,9 @@ body.light .modal-close{background:linear-gradient(to bottom,#fff 70%,transparen
         <h3>Let's connect 🚀</h3>
         <p>Open to opportunities, collaborations, or a chat about tech, embedded systems or AI. Reach out through any platform below!</p>
         <div class="c-links">
-          <a href="/cdn-cgi/l/email-protection#701b1f1e14111102051e1b051d11024749454030171d11191c5e131f1d" class="c-link">
+          <a href="mailto:kondaarunkumar7950@gmail.com" class="c-link">
             <div class="c-icon ci-gmail"><i class="fa-solid fa-envelope"></i></div>
-            <div class="c-meta"><small>Email</small><span class="__cf_email__" data-cfemail="5b3034353f3a3a292e35302e363a296c626e6b1b3c363a323775383436">[email&#160;protected]</span></div>
+            <div class="c-meta"><small>Email</small>kondaarunkumar7950@gmail.com</div>
           </a>
           <a href="https://wa.me/917287902264" class="c-link" target="_blank">
             <div class="c-icon ci-wa"><i class="fa-brands fa-whatsapp"></i></div>
@@ -879,4 +879,14 @@ const secs=document.querySelectorAll('section[id]');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY+90;
   secs.forEach(s=>{
-    if(y>=s.offsetTop&&y<s.offs
+    if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight){
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        a.classList.remove('active');
+        if(a.getAttribute('href')==='#'+s.id)a.classList.add('active');
+      });
+    }
+  });
+},{passive:true});
+</script>
+</body>
+</html>
