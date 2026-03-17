@@ -189,11 +189,26 @@ section{padding:90px 0;}
 
 /* CERTS */
 .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
-.cc{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:18px;display:flex;gap:13px;align-items:flex-start;transition:all .3s;}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:18px;display:flex;gap:13px;align-items:flex-start;transition:all .3s;cursor:pointer;}
 .cc:hover{border-color:rgba(0,212,255,.38);transform:translateY(-3px);box-shadow:var(--glow);}
-.ci{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(0,212,255,.1);color:var(--accent);}
+.ci{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(0,212,255,.1);color:var(--accent);transition:all .3s;}
+.cc:hover .ci{background:rgba(0,212,255,.2);transform:scale(1.1);}
 .cb h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .cb span{font-size:12px;color:var(--muted);}
+.cert-preview-hint{font-size:10px;color:var(--accent3);font-family:'Space Mono',monospace;margin-top:4px;opacity:.7;}
+
+/* CERT MODAL */
+.cert-mbg{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(14px);}
+.cert-mbg.open{opacity:1;pointer-events:all;}
+.cert-modal{background:linear-gradient(160deg,#0a1628,#050d1a);border:1px solid rgba(0,212,255,.25);border-radius:20px;max-width:680px;width:100%;padding:24px;transform:scale(.94);transition:transform .32s cubic-bezier(.25,.8,.25,1);position:relative;}
+.cert-mbg.open .cert-modal{transform:scale(1);}
+.cert-modal img{width:100%;border-radius:12px;display:block;border:1px solid rgba(0,212,255,.15);margin-bottom:20px;}
+.cert-modal-info{display:flex;flex-direction:column;gap:6px;}
+.cert-modal-title{font-size:18px;font-weight:700;color:var(--text);}
+.cert-modal-issuer{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:.08em;}
+.cert-modal-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-top:4px;}
+.cert-modal-close{position:absolute;top:14px;right:14px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:var(--accent);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.cert-modal-close:hover{background:rgba(0,212,255,.2);}
 
 /* HOBBIES */
 .hrow{display:flex;flex-wrap:wrap;gap:12px;}
@@ -509,14 +524,62 @@ body.light .fc,.body.light .li{background:rgba(255,255,255,.95);}
       <div class="sline"></div>
     </div>
     <div class="cgrid rev">
-      <div class="cc"><div class="ci"><i class="fa-solid fa-robot"></i></div><div class="cb"><h4>Artificial Intelligence Fundamentals</h4><span>IBM — 2025</span></div></div>
-      <div class="cc"><div class="ci"><i class="fa-solid fa-database"></i></div><div class="cb"><h4>AI &amp; Data Science Program</h4><span>Infosys Springboard — 2024</span></div></div>
-      <div class="cc"><div class="ci"><i class="fa-solid fa-microchip"></i></div><div class="cb"><h4>IoT Smart Lab Training</h4><span>Krimyd Technologies — 2024</span></div></div>
-      <div class="cc"><div class="ci"><i class="fa-solid fa-screwdriver-wrench"></i></div><div class="cb"><h4>Mobile Robotics Workshop</h4><span>Dept. of ECE — 2023</span></div></div>
-      <div class="cc"><div class="ci"><i class="fa-solid fa-rocket"></i></div><div class="cb"><h4>Industrial Visit — Remote Sensing</h4><span>ISRO, Hyderabad — 2023</span></div></div>
+      <div class="cc" onclick="openCert('ibm')">
+        <div class="ci"><i class="fa-solid fa-robot"></i></div>
+        <div class="cb">
+          <h4>Artificial Intelligence Fundamentals</h4>
+          <span>IBM SkillsBuild — Mar 2025</span>
+          <div class="cert-preview-hint">🖼 Click to view certificate</div>
+        </div>
+      </div>
+      <div class="cc" onclick="openCert('infosys')">
+        <div class="ci"><i class="fa-solid fa-database"></i></div>
+        <div class="cb">
+          <h4>AI &amp; Data Science Program</h4>
+          <span>Infosys Springboard — 2024</span>
+          <div class="cert-preview-hint">🖼 Click to view certificate</div>
+        </div>
+      </div>
+      <div class="cc" onclick="openCert('iot')">
+        <div class="ci"><i class="fa-solid fa-microchip"></i></div>
+        <div class="cb">
+          <h4>IoT Smart Lab Training</h4>
+          <span>Krinydi Technologies — Dec 2023</span>
+          <div class="cert-preview-hint">🖼 Click to view certificate</div>
+        </div>
+      </div>
+      <div class="cc" onclick="openCert('robotics')">
+        <div class="ci"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div class="cb">
+          <h4>Mobile Robotics Workshop</h4>
+          <span>Dept. of ECE, SITS — Nov 2023</span>
+          <div class="cert-preview-hint">🖼 Click to view certificate</div>
+        </div>
+      </div>
+      <div class="cc" onclick="openCert('isro')">
+        <div class="ci"><i class="fa-solid fa-rocket"></i></div>
+        <div class="cb">
+          <h4>Industrial Visit — Remote Sensing</h4>
+          <span>ISRO, Hyderabad — Dec 2023</span>
+          <div class="cert-preview-hint">🖼 Click to view certificate</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- CERT VIEWER MODAL -->
+<div class="cert-mbg" id="cert-mbg" onclick="closeCertMaybe(event)">
+  <div class="cert-modal" id="cert-modal">
+    <button class="cert-modal-close" onclick="closeCert()"><i class="fa-solid fa-xmark"></i></button>
+    <img id="cert-img" src="" alt="Certificate">
+    <div class="cert-modal-info">
+      <div class="cert-modal-title" id="cert-title"></div>
+      <div class="cert-modal-issuer" id="cert-issuer"></div>
+      <div class="cert-modal-desc" id="cert-desc"></div>
+    </div>
+  </div>
+</div>
 
 <!-- HOBBIES -->
 <section style="padding-top:0;padding-bottom:60px">
@@ -727,6 +790,35 @@ function closeM(){
 
 function closeMaybe(e){if(e.target===document.getElementById('mbg'))closeM();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
+
+// CERT MODAL DATA
+const CERTS = {
+  ibm:{img:'cert-ibm.jpeg',title:'Artificial Intelligence Fundamentals',issuer:'IBM SkillsBuild · Issued Mar 03, 2025',desc:'Completed the AI Fundamentals course on IBM SkillsBuild, covering core concepts of artificial intelligence, machine learning, and neural networks.'},
+  infosys:{img:'',title:'AI & Data Science Program',issuer:'Infosys Springboard · 2024',desc:'Completed the AI & Data Science training program by Infosys Springboard covering data science workflows, ML algorithms, and applied AI tools.'},
+  iot:{img:'cert-iot.jpeg',title:'IoT Smart Lab Training',issuer:'Krinydi Technologies · Dec 7–15, 2023',desc:'Hands-on IoT Smart Lab training at New Maruthi Nagar, Hyderabad — covering IoT hardware, sensor integration, and embedded lab projects.'},
+  robotics:{img:'cert-robotics.jpeg',title:'Mobile Robotics Workshop',issuer:'Dept. of ECE, SITS · Nov 7–8, 2023',desc:'Two-day hands-on workshop on Mobile Robotics organized by the ECE Department at Siddhartha Institute of Technology & Sciences.'},
+  isro:{img:'cert-isro.jpeg',title:'Industrial Visit — National Remote Sensing Centre',issuer:'ISRO, Hyderabad · Dec 27, 2023',desc:'Industry visit to the National Remote Sensing Centre, ISRO Hyderabad, organized by the ECE Department of SITS. Gained insights into satellite remote sensing and space technology.'}
+};
+
+function openCert(k){
+  const c=CERTS[k];
+  const imgEl=document.getElementById('cert-img');
+  if(c.img){imgEl.src=c.img;imgEl.style.display='block';}
+  else{imgEl.style.display='none';}
+  document.getElementById('cert-title').textContent=c.title;
+  document.getElementById('cert-issuer').textContent=c.issuer;
+  document.getElementById('cert-desc').textContent=c.desc;
+  document.getElementById('cert-mbg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeCert(){
+  document.getElementById('cert-mbg').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function closeCertMaybe(e){if(e.target===document.getElementById('cert-mbg'))closeCert();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
 
 // CONTACT FORM — FormSubmit.co (free, zero setup)
 async function sendMsg(e){
