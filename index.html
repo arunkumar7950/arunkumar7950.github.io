@@ -381,7 +381,7 @@ body.light .fc,.body.light .li{background:rgba(255,255,255,.95);}
 
       <div class="pc rev" onclick="openM('accident')">
         <div class="pimgw">
-          <img src="accident.jpg" alt="Accident Detection" onerror="this.classList.add('hidden');this.nextElementSibling.style.display='flex'">
+          <img src="robot.jpg" alt="Accident Detection" onerror="this.classList.add('hidden');this.nextElementSibling.style.display='flex'">
           <div class="pfb" style="display:none">🚨</div>
           <div class="pov"><span class="phint">Click for full details →</span></div>
         </div>
@@ -398,7 +398,7 @@ body.light .fc,.body.light .li{background:rgba(255,255,255,.95);}
 
       <div class="pc rev" onclick="openM('robot')">
         <div class="pimgw">
-          <img src="robot.jpg" alt="Surveillance Robot" style="object-position:top;" onerror="this.classList.add('hidden');this.nextElementSibling.style.display='flex'">
+          <img src="accident.jpg" alt="Surveillance Robot" style="object-fit:cover;object-position:center top;" onerror="this.classList.add('hidden');this.nextElementSibling.style.display='flex'">
           <div class="pfb" style="display:none">🤖</div>
           <div class="pov"><span class="phint">Click for full details →</span></div>
         </div>
@@ -606,7 +606,7 @@ body.light .fc,.body.light .li{background:rgba(255,255,255,.95);}
 <script>
 const PD = {
   accident:{
-    img:'accident.jpg',fb:'🚨',
+    img:'robot.jpg',fb:'🚨',
     tags:['NodeMCU ESP8266','MPU6050','MQ Alcohol Sensor','Temperature Sensor','Telegram Bot','LCD 16x2','Buzzer','Arduino IDE','C++','IoT'],
     title:'Accident Detection &amp;',grad:'Alert System',
     sub:'An IoT-based safety system submitted to JNTUH that automatically detects vehicle accidents, drunk driving and engine overheating — sending instant Telegram alerts with all sensor data.',
@@ -622,7 +622,7 @@ const PD = {
     github:'https://github.com/arunkumar7950',demo:null
   },
   robot:{
-    img:'robot.jpg',fb:'🤖',
+    img:'accident.jpg',fb:'🤖',
     tags:['Arduino','Raspberry Pi','ESP8266','ESP32','STM32','ARM Cortex','Wi-Fi','Camera','PIR Sensor','IoT'],
     title:'Wireless Surveillance',grad:'Robot',
     sub:'An IoT-powered wireless robot with live video streaming and motion detection for real-time remote security monitoring — solving the limitations of traditional static surveillance systems.',
